@@ -1,6 +1,7 @@
 package org.globaltester.cryptoprovider.bc;
 
 import java.security.Provider;
+import java.security.Security;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.globaltester.cryptoprovider.Cryptoprovider;
@@ -11,6 +12,7 @@ public class ProviderBc implements Cryptoprovider {
 	
 	public ProviderBc() {
 		 provider = new BouncyCastleProvider();
+		 Security.addProvider(provider);
 	}
 
 	@Override

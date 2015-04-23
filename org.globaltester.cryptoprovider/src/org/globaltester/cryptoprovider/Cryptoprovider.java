@@ -20,6 +20,10 @@ public interface Cryptoprovider {
 	
 	/**
 	 * Returns the Cryptoprovider object
+	 * <p/>
+	 * It is the responsibility of the implementing class that a provided
+	 * provider is already registered in the system.
+	 * 
 	 * @return Provider: The Cryptoprovider
 	 */
 	public Provider getCryptoProviderObject();
