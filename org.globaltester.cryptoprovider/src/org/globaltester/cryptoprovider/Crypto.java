@@ -3,7 +3,6 @@ package org.globaltester.cryptoprovider;
 import java.security.Provider;
 import java.security.Security;
 
-import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceEvent;
 import org.osgi.framework.ServiceListener;
 import org.osgi.util.tracker.ServiceTracker;
@@ -18,23 +17,14 @@ import org.osgi.util.tracker.ServiceTracker;
  */
 public class Crypto implements ServiceListener {
 	
-	private static BundleContext bundleContext;
 	private static ServiceTracker<Cryptoprovider, Cryptoprovider> serviceTrackerCrypto = null;
 	private static Crypto instance;
 	private Cryptoprovider cryptoProviderService = null;
 	
-	static {
-		bundleContext = Activator.getContext();
-	}
-	
 	/**
 	 * Singleton constructor, ensures that the class can not be instantiated from outside.
 	 */
-	private Crypto(){
-		if (bundleContext != null){
-			serviceTrackerCrypto = new ServiceTracker<Cryptoprovider, Cryptoprovider>(bundleContext, Cryptoprovider.class.getName(), null);
-			serviceTrackerCrypto.open();	
-		}
+	private Crypto(){	
 	};
 	
 	/**
@@ -77,6 +67,11 @@ public class Crypto implements ServiceListener {
 	
 	
 	private Provider getCryptoProviderFromService() {
+		if (serviceTrackerCrypto == null && Activator.getContext() != null){
+			serviceTrackerCrypto = new ServiceTracker<Cryptoprovider, Cryptoprovider>(Activator.getContext(), Cryptoprovider.class.getName(), null);
+			serviceTrackerCrypto.open();
+		}
+		
 		if (serviceTrackerCrypto != null){
 			cryptoProviderService = (Cryptoprovider) serviceTrackerCrypto.getService();
 			
