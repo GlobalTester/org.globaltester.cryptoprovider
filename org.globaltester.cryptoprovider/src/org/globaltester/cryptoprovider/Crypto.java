@@ -3,8 +3,6 @@ package org.globaltester.cryptoprovider;
 import java.security.Provider;
 import java.security.Security;
 
-import org.osgi.framework.ServiceEvent;
-import org.osgi.framework.ServiceListener;
 import org.osgi.util.tracker.ServiceTracker;
 
 /**
@@ -15,11 +13,10 @@ import org.osgi.util.tracker.ServiceTracker;
  * @author amay, mboonk, jkoch
  * 
  */
-public class Crypto implements ServiceListener {
+public class Crypto {
 	
 	private static ServiceTracker<Cryptoprovider, Cryptoprovider> serviceTrackerCrypto = null;
 	private static Crypto instance;
-	private Cryptoprovider cryptoProviderService = null;
 	
 	/**
 	 * Singleton constructor, ensures that the class can not be instantiated from outside.
@@ -73,10 +70,10 @@ public class Crypto implements ServiceListener {
 		}
 		
 		if (serviceTrackerCrypto != null){
-			cryptoProviderService = (Cryptoprovider) serviceTrackerCrypto.getService();
+			Cryptoprovider service = (Cryptoprovider) serviceTrackerCrypto.getService();
 			
-		    if (cryptoProviderService != null) {
-		    	return cryptoProviderService.getCryptoProviderObject();
+		    if (service != null) {
+		    	return service.getCryptoProviderObject();
 			}	
 		}
 	    
@@ -88,15 +85,6 @@ public class Crypto implements ServiceListener {
 		
 		// if everything fails
 		return null;
-	}
-
-	@Override
-	public void serviceChanged(ServiceEvent event) {
-		if (event.getType() == ServiceEvent.REGISTERED){
-			this.cryptoProviderService = (Cryptoprovider) Activator.getContext().getService(event.getServiceReference());
-		} else if (event.getType() == ServiceEvent.UNREGISTERING){
-			this.cryptoProviderService = null;
-		}
 	}
 
 }
