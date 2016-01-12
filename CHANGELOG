@@ -1,4 +1,4 @@
-Version x.y.z (18.12.2015)
+Version 0.8.0 (18.12.2015)
 
 * Unified Oid class hierarchy and use
 * Better handling of the cryptoprovider service
