@@ -1,3 +1,9 @@
+Version 0.8.1 (29.01.2016)
+
+* Made Cryptoproviders lazy again
+* Improve service handling for cryptoprovider
+
+
 Version 0.8.0 (18.12.2015)
 
 * Unified Oid class hierarchy and use
