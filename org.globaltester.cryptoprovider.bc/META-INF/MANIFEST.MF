@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Bc
+Bundle-Name: GT Cryptoprovider BC
 Bundle-SymbolicName: org.globaltester.cryptoprovider.bc
 Bundle-Version: 0.8.1
 Bundle-Activator: org.globaltester.cryptoprovider.bc.Activator

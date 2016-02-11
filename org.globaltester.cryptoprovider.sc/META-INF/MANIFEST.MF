@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Sc
+Bundle-Name: GT Cryptoprovider SC
 Bundle-SymbolicName: org.globaltester.cryptoprovider.sc
 Bundle-Version: 0.8.1
 Bundle-Activator: org.globaltester.cryptoprovider.sc.Activator
