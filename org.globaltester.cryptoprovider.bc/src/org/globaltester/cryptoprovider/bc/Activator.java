@@ -9,11 +9,11 @@ import org.osgi.framework.BundleContext;
 public class Activator implements BundleActivator {
 
 	private static BundleContext context;
-
+	
 	public static BundleContext getContext() {
 		return context;
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
@@ -27,10 +27,10 @@ public class Activator implements BundleActivator {
 		
 		//register service in service registry
 		Hashtable<String, String> props = new Hashtable<String, String>();
-        bundleContext.registerService(Cryptoprovider.class, new ProviderBc(), props);
-        System.out.println("END Activator bc");
+		bundleContext.registerService(Cryptoprovider.class, new ProviderBc(), props);
+		System.out.println("END Activator bc");
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
