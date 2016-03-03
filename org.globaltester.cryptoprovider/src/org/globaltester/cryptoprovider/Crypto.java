@@ -68,8 +68,9 @@ public class Crypto {
 	}
 	
 	/**
-	 * Returns a {@link Provider} wit additional requirements as specified by the provided String
-	 * @param filterString the String to filter for
+	 * Returns a {@link Provider} wit additional requirements as specified by the provided filter String.
+	 * Filter String must comply to RFC1960.
+	 * @param filterString the RFC1960 compliant String to filter for
 	 * @return a {@link Provider} wit additional requirements as specified by the provided String
 	 */
 	public static Provider getCryptoProvider(String filterString) {
