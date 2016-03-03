@@ -21,7 +21,7 @@ public class Crypto {
 	/**
 	 * Singleton constructor, ensures that the class can not be instantiated from outside.
 	 */
-	private Crypto(){	
+	private Crypto(){
 	};
 	
 	/**
@@ -52,7 +52,7 @@ public class Crypto {
 	public static void setCryptoProvider(Provider newProvider) {
 		providerObject = newProvider;
 	}
-
+	
 	public static Provider getCryptoProvider() {
 		if (providerObject != null) {
 			return providerObject;
@@ -72,12 +72,12 @@ public class Crypto {
 		if (serviceTrackerCrypto != null){
 			Cryptoprovider service = (Cryptoprovider) serviceTrackerCrypto.getService();
 			
-		    if (service != null) {
-		    	return service.getCryptoProviderObject();
-			}	
+			if (service != null) {
+				return service.getCryptoProviderObject();
+			}
 		}
-	    
-	    // use default system provider as fallback
+		
+		// use default system provider as fallback
 		Provider[] providers = Security.getProviders();
 		if (providers != null && providers.length > 0) {
 			return providers[0];
