@@ -3,6 +3,9 @@ package org.globaltester.cryptoprovider;
 import java.security.Provider;
 import java.security.Security;
 
+import org.osgi.framework.Constants;
+import org.osgi.framework.Filter;
+import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.util.tracker.ServiceTracker;
 
 /**
@@ -16,6 +19,7 @@ import org.osgi.util.tracker.ServiceTracker;
 public class Crypto {
 	
 	private static ServiceTracker<Cryptoprovider, Cryptoprovider> serviceTrackerCrypto = null;
+	private static Filter filter = null;
 	private static Crypto instance;
 	
 	/**
@@ -53,19 +57,43 @@ public class Crypto {
 		providerObject = newProvider;
 	}
 	
+	/**
+	 * Returns a {@link Provider} without any additional requirements
+	 * @return a {@link Provider} without any additional requirements
+	 */
 	public static Provider getCryptoProvider() {
 		if (providerObject != null) {
 			return providerObject;
 		}
 		
-		return getInstance().getCryptoProviderFromService();
+		String filterString = "(" + Constants.OBJECTCLASS + "=" + Cryptoprovider.class.getName() + ")";
+		
+		return getCryptoProvider(filterString);
 	}
 	
+	/**
+	 * Returns a {@link Provider} wit additional requirements as specified by the provided String
+	 * @param filterString the String to filter for
+	 * @return a {@link Provider} wit additional requirements as specified by the provided String
+	 */
+	public static Provider getCryptoProvider(String filterString) {
+		if (providerObject != null) {
+			return providerObject;
+		}
+		
+		Filter newFilter;
+		try {
+			newFilter = Activator.getContext().createFilter(filterString);
+		} catch (InvalidSyntaxException e) {
+			return null;
+		}
+		
+		return getInstance().getCryptoProviderFromService(newFilter);
+	}
 	
-	
-	private Provider getCryptoProviderFromService() {
-		if (serviceTrackerCrypto == null && Activator.getContext() != null){
-			serviceTrackerCrypto = new ServiceTracker<Cryptoprovider, Cryptoprovider>(Activator.getContext(), Cryptoprovider.class.getName(), null);
+	private Provider getCryptoProviderFromService(Filter newFilter) {
+		if (((serviceTrackerCrypto == null) || (!filter.equals(newFilter))) && (Activator.getContext() != null)){
+			serviceTrackerCrypto = new ServiceTracker<Cryptoprovider, Cryptoprovider>(Activator.getContext(), filter, null);
 			serviceTrackerCrypto.open();
 		}
 		
