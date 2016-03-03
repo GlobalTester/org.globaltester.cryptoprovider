@@ -62,10 +62,6 @@ public class Crypto {
 	 * @return a {@link Provider} without any additional requirements
 	 */
 	public static Provider getCryptoProvider() {
-		if (providerObject != null) {
-			return providerObject;
-		}
-		
 		String filterString = "(" + Constants.OBJECTCLASS + "=" + Cryptoprovider.class.getName() + ")";
 		
 		return getCryptoProvider(filterString);
