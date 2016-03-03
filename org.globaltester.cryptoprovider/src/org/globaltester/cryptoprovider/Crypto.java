@@ -92,6 +92,7 @@ public class Crypto {
 		if (((serviceTrackerCrypto == null) || (!filter.equals(newFilter))) && (Activator.getContext() != null)){
 			serviceTrackerCrypto = new ServiceTracker<Cryptoprovider, Cryptoprovider>(Activator.getContext(), newFilter, null);
 			serviceTrackerCrypto.open();
+			filter = newFilter;
 		}
 		
 		if (serviceTrackerCrypto != null){
