@@ -1,7 +1,5 @@
 package org.globaltester.cryptoprovider.bc;
 
-import java.util.Hashtable;
-
 import org.globaltester.cryptoprovider.Cryptoprovider;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -26,8 +24,8 @@ public class Activator implements BundleActivator {
 		System.out.println("Cryptoprovider bc: " +str);
 		
 		//register service in service registry
-		Hashtable<String, String> props = new Hashtable<String, String>();
-		bundleContext.registerService(Cryptoprovider.class, new ProviderBc(), props);
+		Cryptoprovider cryptoProvider = new ProviderBc();
+		bundleContext.registerService(Cryptoprovider.class, cryptoProvider, cryptoProvider.getProperties());
 		System.out.println("END Activator bc");
 	}
 	
