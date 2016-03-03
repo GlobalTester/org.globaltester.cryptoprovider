@@ -1,6 +1,7 @@
 package org.globaltester.cryptoprovider;
 
 import java.security.Provider;
+import java.util.Hashtable;
 
 /**
  * The interface is used to define the Cryptoprovider object. It is implemented
@@ -11,6 +12,9 @@ import java.security.Provider;
  *
  */
 public interface Cryptoprovider {
+	public static String IDENTIFIER = "name";
+	public static String VERSION = "version";
+	public static String INFO = "info";
 	
 	/**
 	 * Returns the Cryptoprovider identifier
@@ -27,4 +31,11 @@ public interface Cryptoprovider {
 	 * @return Provider: The Cryptoprovider
 	 */
 	public Provider getCryptoProviderObject();
+	
+	/**
+	 * Returns the properties of this {@link Cryptoprovider}
+	 * @return the properties of this {@link Cryptoprovider}
+	 */
+	public Hashtable<String, String> getProperties();
+	
 }
