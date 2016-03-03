@@ -30,7 +30,7 @@ public class ProviderBc implements Cryptoprovider {
 	@Override
 	public Hashtable<String, String> getProperties() {
 		Hashtable<String, String> props = new Hashtable<String, String>();
-		props.put(Cryptoprovider.IDENTIFIER, getCryptoProviderObject().getName());
+		props.put(Cryptoprovider.NAME, getCryptoProviderObject().getName());
 		props.put(Cryptoprovider.VERSION, String.valueOf(getCryptoProviderObject().getVersion()));
 		props.put(Cryptoprovider.INFO, getCryptoProviderObject().getInfo());
 		return props;

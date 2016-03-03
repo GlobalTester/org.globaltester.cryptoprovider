@@ -12,7 +12,7 @@ import java.util.Hashtable;
  *
  */
 public interface Cryptoprovider {
-	public static String IDENTIFIER = "name";
+	public static String NAME = "name";
 	public static String VERSION = "version";
 	public static String INFO = "info";
 	
