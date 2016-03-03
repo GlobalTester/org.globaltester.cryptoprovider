@@ -12,6 +12,7 @@ public class ProviderBc implements Cryptoprovider {
 	
 	public ProviderBc() {
 		 provider = new BouncyCastleProvider();
+		 System.out.println("CryptoProvider is " + provider);
 		 Security.addProvider(provider);
 	}
 

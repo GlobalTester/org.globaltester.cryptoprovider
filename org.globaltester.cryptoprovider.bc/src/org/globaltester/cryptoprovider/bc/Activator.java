@@ -23,7 +23,7 @@ public class Activator implements BundleActivator {
 		Activator.context = bundleContext;
 		
 		String str = Cryptoprovider.class.getName();
-		System.out.println("Cryptoprovider bc: "+str);
+		System.out.println("Cryptoprovider bc: " +str);
 		
 		//register service in service registry
 		Hashtable<String, String> props = new Hashtable<String, String>();
