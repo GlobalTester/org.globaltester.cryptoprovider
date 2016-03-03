@@ -27,7 +27,7 @@ public class Activator implements BundleActivator {
 		
 		//register service in service registry
 		Hashtable<String, String> props = new Hashtable<String, String>();
-		bundleContext.registerService(Cryptoprovider.class, new ProviderBc(), props);
+		bundleContext.registerService(Cryptoprovider.class, new ProviderLegacyBc(), props);
 		System.out.println("END Activator bc");
 	}
 	

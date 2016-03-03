@@ -6,12 +6,13 @@ import java.security.Security;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.globaltester.cryptoprovider.Cryptoprovider;
 
-public class ProviderBc implements Cryptoprovider {
+public class ProviderLegacyBc implements Cryptoprovider {
 	
 	private BouncyCastleProvider provider;
 	
-	public ProviderBc() {
+	public ProviderLegacyBc() {
 		 provider = new BouncyCastleProvider();
+		 System.out.println("CryptoProvider is " + provider);
 		 Security.addProvider(provider);
 	}
 
