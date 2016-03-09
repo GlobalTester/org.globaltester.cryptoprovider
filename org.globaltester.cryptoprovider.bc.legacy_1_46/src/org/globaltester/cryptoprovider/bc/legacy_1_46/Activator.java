@@ -1,4 +1,4 @@
-package org.globaltester.cryptoprovider.legacy.bc;
+package org.globaltester.cryptoprovider.bc.legacy_1_46;
 
 import org.globaltester.cryptoprovider.Cryptoprovider;
 import org.osgi.framework.BundleActivator;
@@ -24,7 +24,7 @@ public class Activator implements BundleActivator {
 		System.out.println("Cryptoprovider bc: "+str);
 		
 		//register service in service registry
-		Cryptoprovider cryptoProvider = new ProviderLegacyBc();
+		Cryptoprovider cryptoProvider = new ProviderBcLegacy_1_46();
 		bundleContext.registerService(Cryptoprovider.class, cryptoProvider, cryptoProvider.getProperties());
 		System.out.println("END Activator bc");
 	}

@@ -1,4 +1,4 @@
-package org.globaltester.cryptoprovider.legacy.bc;
+package org.globaltester.cryptoprovider.bc.legacy_1_46;
 
 import java.security.Provider;
 import java.security.Security;
@@ -7,11 +7,11 @@ import java.util.Hashtable;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.globaltester.cryptoprovider.Cryptoprovider;
 
-public class ProviderLegacyBc implements Cryptoprovider {
+public class ProviderBcLegacy_1_46 implements Cryptoprovider {
 	
 	private BouncyCastleProvider provider;
 	
-	public ProviderLegacyBc() {
+	public ProviderBcLegacy_1_46() {
 		 provider = new BouncyCastleProvider();
 		 System.out.println("CryptoProvider is " + provider);
 		 Security.addProvider(provider);

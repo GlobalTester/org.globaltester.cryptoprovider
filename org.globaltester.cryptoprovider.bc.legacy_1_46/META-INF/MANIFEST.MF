@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: GT Cryptoprovider BC
-Bundle-SymbolicName: org.globaltester.cryptoprovider.legacy.bc
+Bundle-SymbolicName: org.globaltester.cryptoprovider.bc.legacy_1_46
 Bundle-Version: 0.8.2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Bundle-Activator: org.globaltester.cryptoprovider.legacy.bc.Activator
+Bundle-Activator: org.globaltester.cryptoprovider.bc.legacy_1_46.Activator
 Import-Package: org.osgi.framework;version="1.3.0"
 Require-Bundle: org.globaltester.cryptoprovider
 Bundle-ClassPath: .,
@@ -91,6 +91,6 @@ Export-Package: org.bouncycastle,
  org.bouncycastle.x509.examples,
  org.bouncycastle.x509.extension,
  org.bouncycastle.x509.util,
- org.globaltester.cryptoprovider.legacy.bc
+ org.globaltester.cryptoprovider.bc.legacy_1_46
 Bundle-Vendor: HJP Consulting GmbH
 Bundle-ActivationPolicy: lazy
