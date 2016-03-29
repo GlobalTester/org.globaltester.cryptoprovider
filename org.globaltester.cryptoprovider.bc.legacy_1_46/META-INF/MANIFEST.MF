@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: GT Cryptoprovider BC
+Bundle-Name: GT Cryptoprovider BC Legacy 1.46
 Bundle-SymbolicName: org.globaltester.cryptoprovider.bc.legacy_1_46
 Bundle-Version: 0.8.2.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
