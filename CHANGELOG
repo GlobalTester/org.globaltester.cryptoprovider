@@ -1,5 +1,51 @@
-Version 0.8.2 (29.02.2016)
+Version 0.9.0 (06.05.2016)
 
+* Merge remote-tracking branch 'origin/usr/mboonk/qaSprint15'
+* Set all build relevant settings to Java 1.8
+* Merge branch 'usr/cstroh/opensourcingPlatform'
+* Add licenses folder to build.properties
+* Add LICENSE and NOTICE to build.properties
+* Sets correct bundle name
+* Add LICENSE and NOTICE files for our code
+* Add LICENSE and NOTICE files to gitattributes
+* LICENSE files for BC and SC
+* Add README.md to repository
+* added SNAPSHOT qualifier to pom
+* Merge branch 'usr/cstroh/fixVersions'
+* Added .qualifier to bundle version
+* update parent POM version
+* rge branch 'usr/slutters/cryptoInfrastructure'
+* remove direct bouncycastle exports
+* rename bundle o.g.cryptoprovider.bc.legacy_1_46
+* Merge branch 'usr/amay/releaseBuild'
+* added all possible exports for BC
+* extracted setting of new filter
+* fixed problem with opening another ServiceTracker
+* added/improved documentation
+* renamed constant
+* fixed NPE
+* removed obsolete code
+* added option for filtering for specific Cryptoprovider(s)
+* set service properties at service registration
+* set service properties at service registration
+* set service properties at service registration
+* added method for retrieving service properties to be set at registration
+* fixed whitespaces
+* added missing export
+* renamed file
+* added/improved debug output
+* added legacy BC bundle for temporary use
+* fixed whitespace
+* Update version numbers in POM
+* Remove anmespaces from POMs
+* Update version numbers
+* Merge remote-tracking branch 'origin/usr/mboonk/fixFileEndings'
+* update parent pom version
+* Updated the changelog
+* Added missing line endings at the end of text files
+* Add required execution environment to manifest
+* Merge remote-tracking branch 'origin/usr/cstroh/fixGitAttributes'
+* Replace gitattributes by file from o.g.dev
 * Code maintenance
 
 
