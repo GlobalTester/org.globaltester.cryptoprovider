@@ -10,5 +10,5 @@ Require-Bundle: org.globaltester.cryptoprovider
 Bundle-ClassPath: lib/bcprov-jdk15on-150.jar,
  .
 Export-Package: org.globaltester.cryptoprovider.bc
-Bundle-Vendor: HJP Consulting GmbH
+Bundle-Vendor: secunet Security Networks AG
 Bundle-ActivationPolicy: lazy
