@@ -92,5 +92,5 @@ Export-Package: org.bouncycastle,
  org.bouncycastle.x509.extension,
  org.bouncycastle.x509.util,
  org.globaltester.cryptoprovider.bc.legacy_1_46
-Bundle-Vendor: HJP Consulting GmbH
+Bundle-Vendor: secunet Security Networks AG
 Bundle-ActivationPolicy: lazy
