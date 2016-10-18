@@ -3,6 +3,7 @@ package org.globaltester.cryptoprovider;
 import java.security.Provider;
 import java.security.Security;
 
+import org.osgi.framework.BundleContext;
 import org.osgi.framework.Constants;
 import org.osgi.framework.Filter;
 import org.osgi.framework.InvalidSyntaxException;
@@ -78,11 +79,16 @@ public class Crypto {
 			return providerObject;
 		}
 		
-		Filter newFilter;
-		try {
-			newFilter = Activator.getContext().createFilter(filterString);
-		} catch (InvalidSyntaxException e) {
-			return null;
+		Filter newFilter = null;
+		
+		BundleContext bc = Activator.getContext();
+		
+		if (bc != null) {
+			try {
+				newFilter = bc.createFilter(filterString);
+			} catch (InvalidSyntaxException e) {
+				return null;
+			}
 		}
 		
 		return getInstance().getCryptoProviderFromService(newFilter);
