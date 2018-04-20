@@ -24,7 +24,7 @@ public class Activator implements BundleActivator {
 		System.out.println("Cryptoprovider bc: " +str);
 		
 		//register service in service registry
-		Cryptoprovider cryptoProvider = new ProviderBc();
+		Cryptoprovider cryptoProvider = ProviderBc.getInstance();
 		bundleContext.registerService(Cryptoprovider.class, cryptoProvider, cryptoProvider.getProperties());
 		System.out.println("END Activator bc");
 	}
