@@ -1,6 +1,7 @@
 package org.globaltester.cryptoprovider;
 
 import java.security.Provider;
+import java.security.SecureRandom;
 import java.security.Security;
 
 import org.osgi.framework.BundleContext;
@@ -38,7 +39,6 @@ public class Crypto {
 		}
 		return instance;
 	}
-	
 	
 	
 	// this variable is solely used for manual overrides
@@ -124,4 +124,14 @@ public class Crypto {
 		return null;
 	}
 
+	private static SecureRandom secureRandom = null;
+	
+	public static SecureRandom getSecureRandom() {
+		if (secureRandom != null) return secureRandom;
+		return new SecureRandom();
+	}
+	
+	public static void setSecureRandom(SecureRandom newRandom) {
+		secureRandom = newRandom;
+	}
 }
